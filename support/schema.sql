@@ -19,7 +19,7 @@ address TEXT NOT NULL
 
 CREATE TABLE observations (
 id SERIAL PRIMARY KEY,
-users_id INT NOT NULL,
+students_id INT NOT NULL,
 tasks_id INT NOT NULL,
 duration INTERVAL NOT NULL
 );
