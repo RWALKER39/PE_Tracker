@@ -74,8 +74,8 @@ ORDER BY c.relname, a.attnum;
             const duration = req.body.duration;
             const sqlInsert = await client.query(
                 `INSERT INTO observations (users_id, students_id, tasks_id, duration)
-                VALUES (${usersId}, ${studentsId}, ${tasksId}, ${duration}) RETURNING id as new_id;`
-            );
+                VALUES (${usersId}, ${studentsId}, ${tasksId}, ${duration})
+                RETURNING id as new_id;`);
 
             console.log(`Tracking task ${tasksId}`);
 
