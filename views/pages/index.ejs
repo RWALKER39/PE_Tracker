@@ -13,10 +13,6 @@
         let currentTaskId = null;
             
         const logTask = async function(id) {
-
-            const r = await response.text();
-            console.log(r);
-
           const response = await fetch('/log', {
                method: 'POST',
                 headers: {
@@ -35,6 +31,9 @@
             console.log(result);
             
             currentTaskId = id;
+
+            const r = await response.text();
+            console.log(r);
         };
         </script>
     </body>
