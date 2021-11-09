@@ -38,11 +38,11 @@
             </select>
 
         <button onclick="getName()">
-            Select Name
+            Select Student
         </button>
 
         <p>
-            "The sudents that was chosen was:"
+            The sudent that was chosen was:
             <span class="output"></span>
         </p>
 
@@ -77,7 +77,7 @@
         };
 
         function getName() {
-            selectElement = documnet.querySelector('#sName');
+            selectElement = document.querySelector('#sName');
             output = selectElement.options[selectElement.selectedIndex].value;
             document.querySelector('.output').textContent = output;
         }
