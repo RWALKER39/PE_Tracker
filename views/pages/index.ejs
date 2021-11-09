@@ -6,10 +6,53 @@
     </head>
     <body>
         <h1>PE Tracker</h1>
+
+        <label for="studentsName">Select Student's Name:</label>
+
+            <select name="sName" id="sName">
+                <option value="Kim Adams">Kim Adams</option>
+                <option value="Ed Anderson">Ed Anderson</option>
+                <option value="Mable Berry">Mable Berry</option>
+                <option value="Dallas Brown">Dallas Brown</option>
+                <option value="Jeremy Bryan">Jeremy Bryan</option>
+                <option value="Estelle Butler">Estelle Butler</option>
+                <option value="Mildred Daniels">Mildred Daniels</option>
+                <option value="Essie Edwards">Essie Edwards</option>
+                <option value="Kellie Frank">Kellie Frank</option>
+                <option value="Geraldine Ford">Geraldine Ford</option>
+                <option value="Joyce Gibson">Joyce Gibson</option>
+                <option value="Wayne Henry">Wayne Henry</option>
+                <option value="Otis Henderson">Otis Henderson</option>
+                <option value="Eva Hoffman">Eva Hoffman</option>
+                <option value="Rickey Jefferson">Rickey Jefferson</option>
+                <option value="Ora Larson">Ora Larson</option>
+                <option value="Lindsay Morrison">Lindsay Morrison</option>
+                <option value="Brad Phelps">Brad Phelps</option>
+                <option value="Vernon Ramirez">Vernon Ramirez</option>
+                <option value="Tom Roberts">Tom Roberts</option>
+                <option value="Manuel Schwartz">Manuel Schwartz</option>
+                <option value="Cameron Simmons">Cameron Simmons</option>
+                <option value="Amos Wheeler">Amos Wheeler</option>
+                <option value="Theodore Williams">Theodore Williams</option>
+                <option value="Bradley Tran">Bradley Tran</option>
+            </select>
+
+        <button onclick="getName()">
+            Select Name
+        </button>
+
+        <p>
+            "The sudents that was chosen was:"
+            <span class="output"></span>
+        </p>
+
         <% tasks.forEach(function(r) {%>
         <button id='<%= r.id %>'onClick='javascript:logTask(<%= r.id %>);'><%= r.name %></button>
         <% }); %>
         <script>
+            
+
+
         let currentTaskId = null;
             
         const logTask = async function(id) {
@@ -32,6 +75,12 @@
             
             currentTaskId = id;
         };
+
+        function getName() {
+            selectElement = documnet.querySelector('#sName');
+            output = selectElement.options[selectElement.selectedIndex].value;
+            document.querySelector('.output').textContent = output;
+        }
         </script>
     </body>
 </html>
